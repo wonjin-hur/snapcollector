@@ -26,7 +26,7 @@ public class PostRepositoryTest {
         postsRepository.deleteAll();
     }
 
-   /* @Test
+    @Test
     public void savePosts_Get() {
         postsRepository.save(Posts.builder().title("테스트 제목")
                 .content("본문")
@@ -37,7 +37,7 @@ public class PostRepositoryTest {
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle(), is("테스트 제목"));
         assertThat(posts.getContent(), is("본문"));
-    }*/
+    }
 
     @Test
     public void check_timesaving_well() {
