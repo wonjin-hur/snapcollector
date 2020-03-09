@@ -26,18 +26,18 @@ public class PostRepositoryTest {
         postsRepository.deleteAll();
     }
 
-    @Test
+   /* @Test
     public void savePosts_Get() {
         postsRepository.save(Posts.builder().title("테스트 제목")
                 .content("본문")
-                .author("wonjin@gmail.com").build());
+                .author("wonjin").build());
 
         List<Posts> postsList = postsRepository.findAll();
 
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle(), is("테스트 제목"));
         assertThat(posts.getContent(), is("본문"));
-    }
+    }*/
 
     @Test
     public void check_timesaving_well() {
