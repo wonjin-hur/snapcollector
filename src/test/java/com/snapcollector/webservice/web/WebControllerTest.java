@@ -24,4 +24,10 @@ public class WebControllerTest {
         assertThat(body).contains("스프링부트로 시작하는 웹 서비스");
     }
 
+    @Test
+    public void Profile확인(){
+        String profile = this.restTemplate.getForObject("/profile", String.class);
+        assertThat(profile).isEqualTo("local");
+    }
+
 }
