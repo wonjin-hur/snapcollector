@@ -2,6 +2,7 @@ package com.snapcollector.webservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @EnableJpaAuditing
@@ -13,7 +14,8 @@ public class Application {
 			+ "/app/config/snapcollector/real-application.yml";
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		new SpringApplicationBuilder(Application.class)
+				.properties(APPLICATION_LOCATIONS)
+				.run(args);
 	}
-
 }
