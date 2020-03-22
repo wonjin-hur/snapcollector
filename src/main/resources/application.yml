@@ -9,3 +9,5 @@ spring:
   profiles: local
   jpa:
     show-sql: true
+server:
+  port: 8081
