@@ -31,7 +31,7 @@ public class WebRestController {
     }
 
     @GetMapping("/profile")
-    public String getPRofile(){
+    public String getProfile(){
         return Arrays.stream(env.getActiveProfiles()).findFirst().orElse("");
     }
 
