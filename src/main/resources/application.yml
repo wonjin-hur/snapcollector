@@ -16,7 +16,7 @@ spring:
 # local 환경
 ---
 spring.profiles: local
-spring.profiles.include: real-db, oauth
+spring.profiles.include: real-db, appconf
 spring:
   jackson:
     deserialization:
@@ -44,14 +44,14 @@ server:
 
 ---
 spring.profiles: set1
-spring.profiles.include: real-db, oauth
+spring.profiles.include: real-db
 
 server:
   port: 8081
 
 ---
 spring.profiles: set2
-spring.profiles.include: real-db, oauth
+spring.profiles.include: real-db
 
 server:
   port: 8082

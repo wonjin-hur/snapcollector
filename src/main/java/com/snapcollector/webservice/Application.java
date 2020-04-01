@@ -41,10 +41,7 @@ public class Application {
                 .run(args);
     }
 
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
+
 //    @Bean
 //    public WebMvcConfigurer webMvcConfigurer() {
 //        return new WebMvcConfigurer() {
