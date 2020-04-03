@@ -41,18 +41,18 @@ public class AppConfig {
 
             @Override
             public void run(ApplicationArguments args) throws Exception {
-                Set<AccountRole> adminRole = new HashSet<>();
-                adminRole.add(AccountRole.ADMIN);
-                adminRole.add(AccountRole.USER);
-
-                Set<AccountRole> userRole = new HashSet<>();
-                userRole.add(AccountRole.USER);
-
-                Account adminAccount = Account.builder().email(appProperties.getAdminUsername()).password(appProperties.getAdminPassword()).roles(adminRole).build();
-                Account userAccount = Account.builder().email(appProperties.getUserUsername()).password(appProperties.getUserPassword()).roles(userRole).build();
-
-                accountService.saveAccount(adminAccount);
-                accountService.saveAccount(userAccount);
+//                Set<AccountRole> adminRole = new HashSet<>();
+//                adminRole.add(AccountRole.ADMIN);
+//                adminRole.add(AccountRole.USER);
+//
+//                Set<AccountRole> userRole = new HashSet<>();
+//                userRole.add(AccountRole.USER);
+//
+//                Account adminAccount = Account.builder().email(appProperties.getAdminUsername()).password(appProperties.getAdminPassword()).roles(adminRole).build();
+//                Account userAccount = Account.builder().email(appProperties.getUserUsername()).password(appProperties.getUserPassword()).roles(userRole).build();
+//
+//                accountService.saveAccount(adminAccount);
+//                accountService.saveAccount(userAccount);
             }
         };
     }

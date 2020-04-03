@@ -65,6 +65,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     public FilterRegistrationBean corsFilter1() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
+        config.addAllowedOrigin("*");
         config.setAllowCredentials(true);
         config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
