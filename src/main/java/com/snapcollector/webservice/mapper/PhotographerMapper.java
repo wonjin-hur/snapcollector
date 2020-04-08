@@ -9,6 +9,5 @@ import java.util.List;
 @Mapper
 public interface PhotographerMapper {
 
-    Photographer findByName(String name);
     List<PhotographerScore> getAllPhotographerScores(PhotographerScore ps);
 }
