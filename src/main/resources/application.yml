@@ -42,6 +42,11 @@ logging:
 server:
   port: 5000
 
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+
 ---
 spring.profiles: set1
 spring.profiles.include: real-db
