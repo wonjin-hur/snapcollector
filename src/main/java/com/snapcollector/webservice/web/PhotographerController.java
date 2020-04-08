@@ -28,12 +28,10 @@ public class PhotographerController {
 
     private final PhotographerService photographerService;
     private final ModelMapper modelMapper;
-    private final PhotographerMapper photographerMapper;
 
-    public PhotographerController(PhotographerService photographerService, PhotographerMapper photographerMapper, ModelMapper modelMapper){
+    public PhotographerController(PhotographerService photographerService, ModelMapper modelMapper){
         this.photographerService = photographerService;
         this.modelMapper = modelMapper;
-        this.photographerMapper = photographerMapper;
     }
 
 //    @GetMapping

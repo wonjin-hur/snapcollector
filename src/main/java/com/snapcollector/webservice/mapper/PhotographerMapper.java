@@ -5,6 +5,7 @@ import com.snapcollector.webservice.domain.PhotographerScore;
 
 import java.util.List;
 
+
 public interface PhotographerMapper {
 
     Photographer findByName(String name);
