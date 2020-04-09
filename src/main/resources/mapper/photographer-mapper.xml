@@ -5,7 +5,19 @@
 <mapper namespace="com.snapcollector.webservice.mapper.PhotographerMapper">
 
     <select id="getAllPhotographerScores" resultType="com.snapcollector.webservice.domain.PhotographerScore" parameterType="com.snapcollector.webservice.domain.PhotographerScore">
-        select A.id, description, location, name, IFNULL(score, 0) AS score from photographer A left join (select score, photographer from score where account_id=#{userId}) B on A.name = B.photographer where A.location = #{location}
+        select A.id, description, location, name, IFNULL(score, 0) AS score from photographer A
+        left join (select score, photographer from score where account_id=#{userId}) B
+        on A.name = B.photographer
+        where A.location = #{location}
+        <if test="selectOption == 'noscore'">
+            and B.photographer IS NULL
+        </if>
+        <if test="sortOption == 'asc'">
+            order by score asc
+        </if>
+        <if test="sortOption == 'desc'">
+            order by score desc
+        </if>
     </select>
 
 

@@ -23,4 +23,7 @@ public class PhotographerScore extends BaseEntity{
     private String location;
     private Integer score;
     private Integer userId;
+    private String sortName;
+    private String sortOption;
+    private String selectOption;
 }

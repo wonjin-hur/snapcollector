@@ -51,13 +51,18 @@ public class PhotographerController {
 
     @GetMapping
     public ResponseEntity queryPhotographerScores(@RequestParam(value="page") int page, @RequestParam(value="pageSize") int pageSize, @RequestParam String location,
-                                                  @CurrentUser Account account) {
+                                                  @RequestParam(value="sort_name") String sortName, @RequestParam(value="sort_option") String sortOption,
+                                                  @RequestParam(value="checkbox") String checkbox, @CurrentUser Account account) {
 
         PhotographerScore ps = new PhotographerScore();
         ps.setPage(page);
         ps.setRows(pageSize);
         ps.setLocation(location);
         ps.setUserId(account.getId());
+        ps.setSortName(sortName);
+        ps.setSortOption(sortOption);
+        ps.setSelectOption(checkbox);
+
 
         List<PhotographerScore> psList = photographerService.getAllPhotographerScores(ps);
         System.out.println(psList.toString());
