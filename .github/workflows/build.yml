@@ -53,3 +53,6 @@ jobs:
 
       - name: Code Deploy
         run: aws deploy create-deployment --application-name snap-springservice --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name snap-springservice-group --s3-location bucket=snap-springservice-deploy,bundleType=zip,key=snapcollector.zip
+
+      - name: Moving build to artifacts directory
+        run: execute-deploy.sh
