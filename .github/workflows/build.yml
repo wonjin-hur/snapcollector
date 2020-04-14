@@ -41,15 +41,14 @@ jobs:
         run: mv snapcollector.zip deploy/snapcollector.zip
         shell: bash
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-2
-
       - name: Upload to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: aws s3 cp --region ap-northeast-2 deploy/snapcollector.zip s3://snap-springservice-deploy
 
       - name: Code Deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: aws deploy create-deployment --application-name snap-springservice --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=snap-springservice-deploy,bundleType=zip,key=snapcollector.zip
