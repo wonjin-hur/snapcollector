@@ -1,8 +1,5 @@
 package com.snapcollector.webservice.util;
 
-import com.snapcollector.webservice.domain.Account;
-import com.snapcollector.webservice.domain.AccountRepository;
-import com.snapcollector.webservice.domain.AccountRole;
 import com.snapcollector.webservice.service.AccountService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Configuration
 public class AppConfig {

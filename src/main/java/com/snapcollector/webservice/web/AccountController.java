@@ -1,18 +1,14 @@
 package com.snapcollector.webservice.web;
 
 import com.snapcollector.webservice.Resource.ErrorsResource;
-import com.snapcollector.webservice.Resource.EventResource;
 import com.snapcollector.webservice.domain.*;
-import com.snapcollector.webservice.dto.event.EventDto;
 import com.snapcollector.webservice.service.AccountService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +29,6 @@ public class AccountController {
         this.modelMapper = modelMapper;
         this.accountService = accountService;
     }
-    @CrossOrigin
     @PostMapping
     public ResponseEntity createEvent(@RequestBody @Valid Account account, Errors errors){
         if(errors.hasErrors()){

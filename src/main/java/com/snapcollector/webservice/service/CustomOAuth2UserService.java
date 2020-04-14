@@ -1,9 +1,5 @@
 package com.snapcollector.webservice.service;
 
-import com.snapcollector.webservice.domain.PostsRepository;
-import com.snapcollector.webservice.domain.SessionUser;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.http.RequestEntity;

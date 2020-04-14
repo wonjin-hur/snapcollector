@@ -1,8 +1,7 @@
 package com.snapcollector.webservice.Resource;
 
-import com.snapcollector.webservice.domain.Event;
 import com.snapcollector.webservice.domain.Photographer;
-import com.snapcollector.webservice.web.EventController;
+import com.snapcollector.webservice.web.PhotographerController;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
 
@@ -12,6 +11,6 @@ public class PhotographerResource extends EntityModel<Photographer> {
 
     public PhotographerResource(Photographer photographer, Link... links){
         super(photographer, links);
-        add(linkTo(EventController.class).slash(photographer.getId()).withSelfRel());
+        add(linkTo(PhotographerController.class).slash(photographer.getId()).withSelfRel());
     }
 }

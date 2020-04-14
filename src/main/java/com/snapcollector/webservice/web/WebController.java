@@ -1,10 +1,7 @@
 package com.snapcollector.webservice.web;
 
-import com.snapcollector.webservice.service.PostsService;
-import com.snapcollector.webservice.util.createJWTToken;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,45 +11,39 @@ import javax.servlet.http.HttpSession;
 @AllArgsConstructor
 public class WebController {
 
-    private PostsService postsService;
-    private HttpSession httpSession;
-    private createJWTToken createJWTToken;
-
-
-    @GetMapping("/")
-    public String main(Model model){
-        model.addAttribute("posts", postsService.findAllDesc());
-
-        return "main";
-    }
-
-    @GetMapping("/home")
-    public String getAuthorizationMessage() {
-        return "home";
-    }
-
-    @GetMapping({"/loginSuccess", "/hello"})
-    public String loginSuccess(Model model) {
-        String email = (String) httpSession.getAttribute("email");
-        String gender = (String) httpSession.getAttribute("gender");
-        String age = (String) httpSession.getAttribute("age");
-
-        String token = createJWTToken.createJWTToken(email,gender,age);
-
-        System.out.println(token);
-        return "redirect:http://localhost:8080/agreement?token="+token;
-    }
-
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
-    @GetMapping("/loginFailure")
-    public String loginFailure() {
-        return "loginFailure";
-    }
+//
+//    @GetMapping("/")
+//    public String main(Model model){
+//        return "main";
+//    }
+//
+//    @GetMapping("/home")
+//    public String getAuthorizationMessage() {
+//        return "home";
+//    }
+//
+//    @GetMapping({"/loginSuccess", "/hello"})
+//    public String loginSuccess(Model model) {
+//        String email = (String) httpSession.getAttribute("email");
+//        String gender = (String) httpSession.getAttribute("gender");
+//        String age = (String) httpSession.getAttribute("age");
+//
+//        String token = createJWTToken.createJWTToken(email,gender,age);
+//
+//        System.out.println(token);
+//        return "redirect:http://localhost:8080/agreement?token="+token;
+//    }
+//
+//
+//    @GetMapping("/login")
+//    public String login() {
+//        return "login";
+//    }
+//
+//    @GetMapping("/loginFailure")
+//    public String loginFailure() {
+//        return "loginFailure";
+//    }
 
     @CrossOrigin
     @GetMapping("/vue_login")

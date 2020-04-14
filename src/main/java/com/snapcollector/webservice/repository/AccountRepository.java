@@ -1,5 +1,6 @@
-package com.snapcollector.webservice.domain;
+package com.snapcollector.webservice.repository;
 
+import com.snapcollector.webservice.domain.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 
