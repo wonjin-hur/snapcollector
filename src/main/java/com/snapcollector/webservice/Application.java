@@ -40,24 +40,6 @@ public class Application {
                 .properties(APPLICATION_LOCATIONS)
                 .run(args);
     }
-
-
-//    @Bean
-//    public WebMvcConfigurer webMvcConfigurer() {
-//        return new WebMvcConfigurer() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                registry.addMapping("/**")
-//                        .allowedOrigins("http://localhost:8080")
-//                        .allowedMethods(
-//                                HttpMethod.GET.name(),
-//                                HttpMethod.HEAD.name(),
-//                                HttpMethod.POST.name(),
-//                                HttpMethod.PUT.name(),
-//                                HttpMethod.DELETE.name());
-//            }
-//        };
-//    }
 }
 
 

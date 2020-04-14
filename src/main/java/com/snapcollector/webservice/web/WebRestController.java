@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 
-@CrossOrigin(origins = "http://127.0.0.1:8080", maxAge = 3600)
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
@@ -18,14 +17,5 @@ public class WebRestController {
     public String getProfile() {
         return Arrays.stream(env.getActiveProfiles()).findFirst().orElse("");
     }
-
-    @CrossOrigin
-    @GetMapping("/vuejs")
-    public String getVuejs() {
-        return "Hello vuejs";
-    }
-
-
-
 
 }
